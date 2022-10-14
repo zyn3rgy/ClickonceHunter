@@ -1,0 +1,72 @@
+#------------------------------------------------------------
+# Mode will either be "provided" or "create"
+#    - "provided" is when the awsapigateway endpoints are created ahead of time and filled out below
+#    - "create" is when the AwsKeys are populated and the program will create and teardown new endpoint(s)
+#------------------------------------------------------------
+Mode: create
+
+
+#------------------------------------------------------------
+# Required if Mode is "create", otherwise values are not used
+# ~Example~
+#AwsKeys:
+#  - accessKey: AKIA5YXXXXXXXXX6FXXX
+#  - secretKey: /JZAXXXXXXX7KvtXXXXXXXX8HamvlgQdXXXXXXXX
+#------------------------------------------------------------
+AwsKeys:
+  - accessKey: 
+  - secretKey: 
+
+
+#-------------------------------------------
+# Useful for debugging, blank means no proxy
+#    Example value - 127.0.0.1:8080
+#-------------------------------------------
+HttpProxy: 
+
+
+#--------------------------------------------------------------
+# Search Engines currently implemented: Google, Swisscows
+#   - awsapigateway value can be left blank if Mode is "create"
+#   - iterations and pages can be set to 0 if you dont want to search that engine
+#---------------------------------------------------------------
+SearchEngine:
+  - Google:
+      #Fireprox URI for https://www.google.com (only required for when Mode is "provided")
+      #example: https://99hqXXX1jk.execute-api.us-east-1.amazonaws.com/fireprox/
+    - awsapigateway: 
+      #Amount of times to iterate through each page for each dork
+      iterations: 1
+      #Pages of results to search to return, max of 29-34 with Google
+      pages: 1
+      #Targeted searches to conduct
+      dorks:
+        - |
+          "ClickOnce and .NET Framework Resources"
+        - |
+          "Otherwise, click the button below to install" and "Publisher:"
+        - |
+          "ClickOnce and .NET Framework Resources" and "The following prerequisites"
+        - |
+          "If these components are already installed" publish.htm
+        - |
+          intext:"Otherwise, click the button below to install"  
+  - Swisscows:
+      #Fireprox URI for https://api.swisscows.com (only required for when Mode is "provided")
+      #example: https://h1j9XXX573.execute-api.us-east-1.amazonaws.com/fireprox/
+    - awsapigateway: 
+      #Amount of times to iterate through each page for each dork
+      iterations: 1
+      #Pages of results to search to return, max of 100 with Swisscows
+      pages: 1
+      #Targeted searches to conduct
+      dorks:
+        - |
+          "ClickOnce and .NET Framework Resources"
+        - |
+          "Otherwise, click the button below to install" and "Publisher:"
+        - |
+          "ClickOnce and .NET Framework Resources" and "The following prerequisites"
+        - |
+          "If these components are already installed" publish.htm
+
