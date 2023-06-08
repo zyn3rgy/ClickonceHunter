@@ -1,7 +1,7 @@
 
 # ClickonceHunter
 
-Tool released in combination with the [Less SmartScreen More Caffeine: ClickOnce (Ab)Use for Trusted Code Execution](https://www.youtube.com/watch?v=cyHxoKvD8Ck)  conference presentation by [0xthirteen](https://twitter.com/0xthirteen) and myself.
+Tool released in combination with the **Less SmartScreen More Caffeine: ClickOnce (Ab)Use for Trusted Code Execution** [conference presentation](https://www.youtube.com/watch?v=cyHxoKvD8Ck) / [blog post](https://medium.com/specter-ops-posts/less-smartscreen-more-caffeine-ab-using-clickonce-for-trusted-code-execution-1446ea8051c5) by [0xthirteen](https://twitter.com/0xthirteen) and myself.
 
 Golang web scraper that makes use of both [chromedp](https://github.com/chromedp/chromedp), as well as normal HTTP requests to scrape search engines for published ClickOnce applications. Includes support for AWS API gateway source IP rotation and specifying an HTTP proxy for troubleshooting. Google and Swisscows search engines are currently supported for scraping.
 
